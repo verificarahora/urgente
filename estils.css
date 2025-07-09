@@ -1,0 +1,101 @@
+*{
+	padding: 0;
+	margin: 0;
+	color:  #1b1b1b;;
+	font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Nirmala UI",  "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Lao UI",  "Iskoola Pota", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le",  "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+}
+
+body{
+	background-color: #F0EDF3;
+}
+
+input,
+textarea {
+    font-size: 16px;
+}
+.formu{
+	max-width: 380px;
+	width: 100%;
+	display: block;
+	box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+	background-color: white;
+	padding: 40px;
+	margin: auto;
+	margin-top: 250px;
+	
+}
+#ia{
+	width: 130px;
+}
+#p{
+	margin: 15px 0;
+	font-size: 25px;
+    line-height: 26px;
+    font-family: sans-serif;
+}
+.camp input{
+	width: 95%;
+	border: none;
+	border-bottom: 1px solid rgb(102, 102, 102);
+	padding: 10px 0;	
+	font-size: 16px;
+	margin-bottom: 15px;
+	outline: none;
+}
+a{
+	color:#0067b8;
+	text-decoration: none;
+}
+.aS{
+	font-size: 14px;
+    line-height: 40px;
+	color: rgb(102, 102, 102);
+}
+.btn{
+	display: flex;
+	justify-content: flex-end;
+	margin: 10px ;
+}
+
+#btn{
+	color: white;
+	background-color: #0067b8;
+	outline: none;
+	padding: 7px 15px;
+	font-size: 17px;
+	cursor: pointer;
+	border: none;
+
+}
+#btn:hover{
+	background-color: #00599F ;
+}
+.cua{
+	margin-bottom: 400px;
+}
+
+#btn2{
+	color: white;
+	background-color: #0067b8;
+	outline: none;
+	padding: 7px 15px;
+	font-size: 17px;
+	cursor: pointer;
+	border: none;
+
+}
+#btn2:hover{
+	background-color: #00599F ;
+}
+
+@media (max-width: 920px){
+	body{
+		background-color: white;
+
+	}
+	.formu{
+		box-shadow: none;
+		margin-top: 0px;
+		padding: 40px 0;
+	}
+}
